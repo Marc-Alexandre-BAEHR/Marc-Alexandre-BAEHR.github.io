@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav_pages");
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
 

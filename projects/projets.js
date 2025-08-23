@@ -14,6 +14,9 @@ function formatTechnologies(technos) {
 }
 
 
+const no_images_message = "Aucune image n'a été fournie pour ce projet.";
+
+
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/projects/projets.json')
         .then(response => response.json())
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.addEventListener('click', () => {
                     afficherDetails(projet, item);
                 });
+
                 sidebar.appendChild(item);
 
                 item.innerHTML = `
@@ -40,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="project-technos">${formatTechnologies(projet.technologies)}</span>
                 `;
             });
+
+            // fonction qui affiche les détails du projet (donc la page à droite)
 
             function afficherDetails(projet, elementClique) {
                 const details = document.getElementById('project-details');
@@ -52,22 +58,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 details.innerHTML = `
                     <h2>${projet.nom}</h2>
                     <p><dt><strong>Description :        </dt></strong><dd>${projet.description.join("<br>")}</p></dd>
-                    <p><dt><strong>Taille du groupe :   </dt></strong><dd> ${projet.equipe} pers.</p></dd>
+                    <p><dt><strong>Taille du groupe :   </dt></strong><dd> ${projet.equipe > 1 ? `${projet.equipe} pers.` : `Seul`}</p></dd>
                     <p><dt><strong>Technologies :       </dt></strong><dd>${projet.technologies.join(', ')}</p></dd>
 
                     <div class="gallery-container" id="gallery-container">
                     ${projet.images.length > 0 ? `
                         <img class="gallery-image" id="gallery-image" src="${projet.images[0]}" alt="Image du projet">
                         <div class="gallery-controls">
-                            <button class="gallery-btn" id="prev-btn">⬅️</button>
+                            <button class="gallery-btn" id="prev-btn"> Précédent </button>
                             <span class="gallery-counter" id="gallery-counter">1 / ${projet.images.length}</span>
-                            <button class="gallery-btn" id="next-btn">➡️</button>
+                            <button class="gallery-btn" id="next-btn"> Suivant   </button>
                         </div>
                     ` : `
-                        <p class="no-images-message">Aucune image n’a été fournie pour ce projet.</p>
+                        <p class="no-images-message">${no_images_message}</p>
                     `}
                     </div>
                 `;
+
+                // mettre à jour l'url quand on a cliqué
+                history.replaceState(null, null, `#${projet.id}`);
 
                 // images du projet
                 if (projet.images.length > 0) {
@@ -78,19 +87,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     const nextBtn = document.getElementById('next-btn');
 
                     function updateGallery() {
-                    imageEl.src = projet.images[currentIndex];
-                    counterEl.textContent = `${currentIndex + 1} / ${projet.images.length}`;
+                        imageEl.src = projet.images[currentIndex];
+                        counterEl.textContent = `${currentIndex + 1} / ${projet.images.length}`;
                     }
 
                     prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + projet.images.length) % projet.images.length;
-                    updateGallery();
+                        currentIndex = (currentIndex - 1 + projet.images.length) % projet.images.length;
+                        updateGallery();
                     });
 
                     nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % projet.images.length;
-                    updateGallery();
+                        currentIndex = (currentIndex + 1) % projet.images.length;
+                        updateGallery();
                     });
+                }
+            }
+
+            // ouvrir le bon projet si y'a le hashtag dans l'url 
+            // FONCTIONNE PAS POUR L'INSTANT
+            // jsuis ;(
+
+            const hash = location.hash.replace('#', '');
+            if (hash) {
+                console.log("hash :", hash);
+                const projet = data.projets.find(p => p.id === hash);
+                if (projet) {
+                    console.log("projet :", projet);
+                    const item = document.querySelector(`.project-item[data-id="${projet.id}"]`);
+                    if (item)
+                        afficherDetails(projet, item);
                 }
             }
         });

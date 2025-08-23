@@ -1,8 +1,16 @@
+/****************
+** Sidebar
+****************/
+
+
+/* Gros menu holder */
+/* gros conteneur */
 .projets-container {
     display: flex;
     height: calc(100vh - 140px);
 }
 
+/* mettre dedans */
 .sidebar {
     width: 20%;
     background-color: #072b47;
@@ -11,20 +19,24 @@
     overflow-y: auto;
 }
 
+/* enleve le margin top du h3 */
 .sidebar h3 {
     margin-top: 0;
 }
 
+/* CSS pour chaque projet */
 .project-item {
     cursor: pointer;
     padding: 10px;
     border-bottom: 1px solid #ffffff33;
 }
 
+/* si au dessus */
 .project-item:hover {
     background-color: #041624;
 }
 
+/* si actif */
 .project-item.active-project {
     background-color: #123860;
     font-weight: bold;
@@ -35,12 +47,15 @@
     border-radius: 3px;
 }
 
-
+/* tag du projet (techno) */
 .project-technos {
     font-size: 0.9em;
     color: #a0d8ff;
 }
 
+
+/* informations du projet   */
+/* quand on clique à gauche */
 .project-details {
     flex: 1;
     padding: 30px;
@@ -48,16 +63,20 @@
     background: white;
 }
 
+/* enleve le margin top du h2, pour   */
+/* faire - d'espace au dessus du bloc */
 .project-details h2 {
     margin-top: 0;
 }
 
+/* sert à mettre le nom et date même ligne, et date à droite ducoup */
 .project-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* style pour la date */
 .project-date {
     font-size: 0.8em;
     color: #bbb;
@@ -66,6 +85,7 @@
 
 /* Partie image */
 
+/* conteneur (bloc blanc) */
 .gallery-container {
     position: relative;
     width: 100%;
@@ -77,6 +97,7 @@
     border-radius: 8px;
 }
 
+/* gestionnaire d'images */
 .gallery-image {
     width: 100%;
     height: auto;
@@ -86,6 +107,7 @@
     box-shadow: 0 0 15px #aaa;
 }
 
+/* affiche les boutons + le compteur */
 .gallery-controls {
     margin-top: 10px;
     display: flex;
@@ -93,6 +115,7 @@
     align-items: center;
 }
 
+/* style pour les boutons */
 .gallery-btn {
     background-color: #072b47;
     color: white;
@@ -103,45 +126,69 @@
     font-size: 18px;
 }
 
+/* changement lorsque souris dessus */
 .gallery-btn:hover {
     background-color: #041624;
 }
 
+/* style pour le texte du compteur */
 .gallery-counter {
     font-size: 16px;
     color: #333;
     margin: 0 15px;
 }
 
+/* style du texte en cas d'absence d'images */
 .no-images-message {
     color: #888;
     font-style: italic;
     margin-top: 10px;
 }
 
-/* Responsive tel uniquement */
+/* gestion si le boug est sur tel */
 @media (max-width: 768px) {
-  .projets-container {
-    flex-direction: column;
-  }
+    .projets-container {
+        flex-direction: column;
+    }
 
-  .sidebar {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    width: 100%;
-    padding: 10px;
-    white-space: nowrap;
-  }
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
 
-  .project-item {
-    flex: 0 0 auto;
-    margin-right: 10px;
-    border-bottom: none;
-    border-right: 1px solid #ffffff33;
-  }
+    .project-item {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        border-bottom: none;
+        border-right: 1px solid #ffffff33;
+    }
 
-  .project-details {
-    margin-top: 15px;
-  }
+    .project-details {
+        margin-top: 15px;
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    .project-details img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-date {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 0.75rem;
+        color: #bbb;
+    }
 }

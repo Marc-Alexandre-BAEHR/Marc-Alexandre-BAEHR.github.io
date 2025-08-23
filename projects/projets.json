@@ -2,6 +2,7 @@
     "projets": [
         {
             "nom": "42sh",
+            "id": "42sh",
             "description": [
                 "Projet de fin de 1ère année à Epitech, réalisation d'un shell en C.",
                 "Basé sur le shell tcsh, notre équipe a implémenté la majorité des fonctionnalités, à savoir:",
@@ -20,6 +21,7 @@
         },
         {
             "nom": "EpyTodo",
+            "id": "epytodo",
             "description": [
                 "Projet Web de gestion de tâches, réalisé par une équipe de 3 personnes.",
                 "Le projet m'a permis d'en apprendre plus sur les technologies du web."
@@ -42,6 +44,7 @@
         },
         {
             "nom": "MyHunter",
+            "id": "myhunter",
             "description": [
                 "MyHunter est une reproduction du célèbe jeu <a href=https://fr.wikipedia.org/wiki/Duck_Hunt>Duck Hunt</a>, développé en C avec la librairie CSFML."
             ],
@@ -58,6 +61,7 @@
         },
         {
             "nom": "Laby Game",
+            "id": "labygame",
             "description": [
                 "LabyGame est un jeu de type labyrinthe développé en Python avec la bibliothèqye PyGame.",
                 "Le joueur doit mémoriser un chemin de labyrinthe généré aléatoire, puis naviguer à travers le labyrinthe sans voir où il se situe.",
