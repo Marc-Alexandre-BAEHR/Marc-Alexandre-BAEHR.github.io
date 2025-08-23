@@ -1,0 +1,82 @@
+{
+    "projets": [
+        {
+            "nom": "42sh",
+            "description": [
+                "Projet de fin de 1ère année à Epitech, réalisation d'un shell en C.",
+                "Basé sur le shell tcsh, notre équipe a implémenté la majorité des fonctionnalités, à savoir:",
+                "Les redirections (simples et doubles), les pipes, les commandes internes, les alias,",
+                "les variables d'environnement, la gestion des erreurs, etc.."
+            ],
+            "equipe": "4",
+            "date": "Juin 2025",
+            "technologies": [
+                "C",
+                "Github"
+            ],
+            "images": [
+                "pictures/42sh/linkedin_picture.png"
+            ]
+        },
+        {
+            "nom": "EpyTodo",
+            "description": [
+                "Projet Web de gestion de tâches, réalisé par une équipe de 3 personnes.",
+                "Le projet m'a permis d'en apprendre plus sur les technologies du web."
+            ],
+            "equipe": "3",
+            "date": "Mai 2025",
+            "technologies": [
+                "HTML",
+                "CSS", 
+                "JavaScript", 
+                "Node.js", 
+                "Express",
+                "Github"
+            ],
+            "images": [
+                "pictures/EpyTodo/site_global.png",
+                "pictures/EpyTodo/site_connexion.png",
+                "pictures/EpyTodo/site_todo.png"
+            ]
+        },
+        {
+            "nom": "MyHunter",
+            "description": [
+                "MyHunter est une reproduction du célèbe jeu <a href=https://fr.wikipedia.org/wiki/Duck_Hunt>Duck Hunt</a>, développé en C avec la librairie CSFML."
+            ],
+            "equipe": "1",
+            "date": "Janvier 2025",
+            "technologies": [
+                "C",
+                "CSFML",
+                "Github"
+            ],
+            "images": [
+                "pictures/MyHunter/game.png"
+            ]
+        },
+        {
+            "nom": "Laby Game",
+            "description": [
+                "LabyGame est un jeu de type labyrinthe développé en Python avec la bibliothèqye PyGame.",
+                "Le joueur doit mémoriser un chemin de labyrinthe généré aléatoire, puis naviguer à travers le labyrinthe sans voir où il se situe.",
+                "Le joueur perd des vies en se heurtant aux murs, mais il a la capacité d'utiliser des objets spéciaux pour l'aider dans le labyrinthe.",
+                "Les objets spéciaux peuvent être achetés via le système de pièces, récoltables dans le labyrinthe."
+            ],
+            "equipe": "3",
+            "date": "Mai 2024",
+            "technologies": [
+                "Python",
+                "PyGame"
+            ],
+            "images": [
+                "pictures/LabyGame/game_menu.png",
+                "pictures/LabyGame/game_options.png",
+                "pictures/LabyGame/game_shop.png",
+                "pictures/LabyGame/in_game.png",
+                "pictures/LabyGame/game_win.png"
+            ]
+        }
+    ]
+}

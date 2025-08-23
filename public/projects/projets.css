@@ -1,0 +1,147 @@
+.projets-container {
+    display: flex;
+    height: calc(100vh - 140px);
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #072b47;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.project-item {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff33;
+}
+
+.project-item:hover {
+    background-color: #041624;
+}
+
+.project-item.active-project {
+    background-color: #123860;
+    font-weight: bold;
+    outline: 1;
+    outline-color: #ffffff;
+    outline-style: solid;
+    outline-width: 1px;
+    border-radius: 3px;
+}
+
+
+.project-technos {
+    font-size: 0.9em;
+    color: #a0d8ff;
+}
+
+.project-details {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background: white;
+}
+
+.project-details h2 {
+    margin-top: 0;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-date {
+    font-size: 0.8em;
+    color: #bbb;
+}
+
+
+/* Partie image */
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 30px;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #aaa;
+}
+
+.gallery-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-btn {
+    background-color: #072b47;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.gallery-btn:hover {
+    background-color: #041624;
+}
+
+.gallery-counter {
+    font-size: 16px;
+    color: #333;
+    margin: 0 15px;
+}
+
+.no-images-message {
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Responsive tel uniquement */
+@media (max-width: 768px) {
+  .projets-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    width: 100%;
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  .project-item {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    border-bottom: none;
+    border-right: 1px solid #ffffff33;
+  }
+
+  .project-details {
+    margin-top: 15px;
+  }
+}
