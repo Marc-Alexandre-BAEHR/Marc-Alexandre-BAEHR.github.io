@@ -1,6 +1,25 @@
 {
     "projets": [
         {
+            "nom": "2048",
+            "id": "2048",
+            "description": [
+                "Recréation du célèbe jeu 2048 en Python à l'aide de la libraire PyGame"
+            ],
+            "equipe": "1",
+            "date": "En ce moment",
+            "technologies": [
+                "Python",
+                "PyGame"
+            ],
+            "images": [
+                "pictures/2048/gameplay_dev.png"
+            ]
+        },
+
+
+
+        {
             "nom": "42sh",
             "id": "42sh",
             "description": [
@@ -19,6 +38,9 @@
                 "pictures/42sh/linkedin_picture.png"
             ]
         },
+
+
+
         {
             "nom": "EpyTodo",
             "id": "epytodo",
@@ -42,11 +64,48 @@
                 "pictures/EpyTodo/site_todo.png"
             ]
         },
+
+
+
         {
-            "nom": "MyHunter",
-            "id": "myhunter",
+            "nom": "My World",
+            "id": "myworld",
             "description": [
-                "MyHunter est une reproduction du célèbe jeu <a href=https://fr.wikipedia.org/wiki/Duck_Hunt>Duck Hunt</a>, développé en C avec la librairie CSFML."
+                "Projet graphique utilisant la 2D isométrique pour creer notre propre terrain personalisable.",
+                "On a creer un système avec bouton permettant de monter, descendre ou encore remettre à zéro la hauteur du terrain.",
+                "Nous pouvons aussi changer la texture de chaque case à l'aide d'un menu déroulant figurant en bas de l'écran",
+                "On peut également sauvegardre notre terrain, redémarrer l'application, et charger notre terrain"
+            ],
+            "equipe": "2",
+            "date": "Mars 2025",
+            "technologies": [
+                "C",
+                "CSFML",
+                "Github"
+            ],
+            "images": [
+                "pictures/MyWorld/myworld.zoom_in.png",
+                "pictures/MyWorld/myworld.without_grid.png",
+                "pictures/MyWorld/myworld.texture_bar.png",
+                "pictures/MyWorld/myworld.informations.png",
+                "pictures/MyWorld/myworld.save_button.png"
+            ]
+        },
+
+
+
+        {
+            "nom": "Tusmo",
+            "id": "tusmo",
+            "description": [
+                "Tusmo est un jeu de lettre inspiré du jeu télévisé <a class='json_a' href=https://fr.wikipedia.org/wiki/Motus_(jeu_t%C3%A9l%C3%A9vis%C3%A9)>Motus</a>",
+                "développé en C avec la librairie CSFML.",
+                "",
+                "Le jeu consiste à deviner un mot de 5 lettres en 6 essais ou moins.",
+                "A chaque essais, vous saurez quelles lettres sont bien placés (en rouge) et ceux présente dans le mot (en jaune)",
+                "",
+                "Dans cette reproduction, vous avez 2 minutes pour trouver le mot, et chaque partie dure 5 manches",
+                "mais vous pouvez définir vous même le nombre de manches souhaité par partie."
             ],
             "equipe": "1",
             "date": "Janvier 2025",
@@ -56,9 +115,36 @@
                 "Github"
             ],
             "images": [
-                "pictures/MyHunter/game.png"
+                "pictures/Tusmo/tusmo.round1.png",
+                "pictures/Tusmo/tusmo.round2.png"
             ]
         },
+
+
+
+        {
+            "nom": "MyHunter",
+            "id": "myhunter",
+            "description": [
+                "MyHunter est une reproduction du célèbe jeu <a class='json_a' href=https://fr.wikipedia.org/wiki/Duck_Hunt>Duck Hunt</a>, développé en C avec la librairie CSFML."
+            ],
+            "equipe": "1",
+            "date": "Janvier 2025",
+            "technologies": [
+                "C",
+                "CSFML",
+                "Github"
+            ],
+            "images": [
+                "pictures/MyHunter/mh.start_menu.png",
+                "pictures/MyHunter/mh.gameplay1.png",
+                "pictures/MyHunter/mh.gameplay2.png",
+                "pictures/MyHunter/mh.gameplay3.png"
+            ]
+        },
+
+
+
         {
             "nom": "Laby Game",
             "id": "labygame",

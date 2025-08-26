@@ -13,6 +13,11 @@ function formatTechnologies(technos) {
     return `${visibles}, +${rest}`;
 }
 
+const link = document.createElement("link");
+link.rel = "stylesheet";
+link.href = "/projects/projets.css";
+document.head.appendChild(link);
+
 
 const no_images_message = "Aucune image n'a été fournie pour ce projet.";
 
@@ -62,16 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p><dt><strong>Technologies :       </dt></strong><dd>${projet.technologies.join(', ')}</p></dd>
 
                     <div class="gallery-container" id="gallery-container">
-                    ${projet.images.length > 0 ? `
-                        <img class="gallery-image" id="gallery-image" src="${projet.images[0]}" alt="Image du projet">
-                        <div class="gallery-controls">
-                            <button class="gallery-btn" id="prev-btn"> Précédent </button>
-                            <span class="gallery-counter" id="gallery-counter">1 / ${projet.images.length}</span>
-                            <button class="gallery-btn" id="next-btn"> Suivant   </button>
-                        </div>
-                    ` : `
-                        <p class="no-images-message">${no_images_message}</p>
-                    `}
+                    ${projet.images.length > 0 ?
+                        `<img class="gallery-image" id="gallery-image" src="${projet.images[0]}" alt="Image du projet">
+                            ${projet.images.length > 1 ? `
+                                    <div class="gallery-controls">
+                                    <button class="gallery-btn" id="prev-btn"> Précédent </button>
+                                    <span class="gallery-counter" id="gallery-counter">1 / ${projet.images.length}</span>
+                                    <button class="gallery-btn" id="next-btn"> Suivant   </button>
+                                    </div>`
+                            :
+                            `<span class="gallery-counter" id="gallery-counter">1 / ${projet.images.length}</span>`
+                        }` : `< p class="no-images-message" > ${no_images_message} </p>`
+                    }
                     </div>
                 `;
 

@@ -192,3 +192,15 @@
         color: #bbb;
     }
 }
+
+.json_a {
+    background-color:#072b47; /* fond bleu */
+    color: white;
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 5px;       /* coins arrondis */
+}
+
+.json_a:hover {
+    background-color: #3498db;
+}
