@@ -193,12 +193,16 @@
     }
 }
 
+/* Ajout des styles pour les boutons */
+/* cliquables dans le texte des      */ 
+/* détails du projet                 */
+
 .json_a {
-    background-color:#072b47; /* fond bleu */
+    background-color: #072b47;
     color: white;
     text-decoration: none;
     padding: 2px 4px;
-    border-radius: 5px;       /* coins arrondis */
+    border-radius: 5px;
 }
 
 .json_a:hover {
