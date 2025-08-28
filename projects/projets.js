@@ -45,25 +45,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 elementClique.classList.add('active-project');
 
                 details.innerHTML = `
-                    <h2>${projet.nom}</h2>
-                    <p><dt><strong>Description :</strong></dt><dd>${projet.description.join("<br>")}</dd></p>
-                    <p><dt><strong>Taille du groupe :</strong></dt><dd>${projet.equipe > 1 ? `${projet.equipe} pers.` : `Seul`}</dd></p>
-                    <p><dt><strong>Technologies :</strong></dt><dd>${projet.technologies.join(', ')}</dd></p>
-
-                    <div class="gallery-container" id="gallery-container">
-                    ${projet.images.length > 0 ?
-                        `<img class="gallery-image" id="gallery-image" src="${projet.images[0]}" alt="Image du projet">
-                            ${projet.images.length > 1 ? `
-                                    <div class="gallery-controls">
-                                    <button class="gallery-btn" id="prev-btn"> Précédent </button>
-                                    <span class="gallery-counter" id="gallery-counter">1 / ${projet.images.length}</span>
-                                    <button class="gallery-btn" id="next-btn"> Suivant   </button>
-                                    </div>`
-                            :
-                            `<span class="gallery-counter" id="gallery-counter">1 / ${projet.images.length}</span>`
-                        }` : `<p class="no-images-message">${no_images_message}</p>`
-                    }
+                <div class="details-grid">
+                    <!-- Colonne gauche (3 blocs) -->
+                    <div class="card info-card name-card">
+                    <span class="section-title">Nom</span>
+                    <div class="info-value">${projet.nom}</div>
                     </div>
+
+                    <div class="card info-card date-card">
+                    <span class="section-title">Date du projet</span>
+                    <div class="info-value">${projet.date}</div>
+                    </div>
+
+                    <div class="card info-card team-card">
+                    <span class="section-title">Taille du groupe</span>
+                    <div class="info-value">
+                        ${projet.equipe > 1 ? `${projet.equipe} personnes` : `1 personne`}
+                    </div>
+                    </div>
+
+                    <!-- Description (prend la hauteur des 3 blocs de gauche) -->
+                    <div class="card desc-card">
+                    <span class="section-title">Description du projet</span>
+                    <div class="desc-text">${projet.description.join("<br>")}</div>
+                    </div>
+
+                    <!-- Galerie -->
+                    <div class="card gallery-card">
+                    <span class="section-title">Galerie d’images</span>
+                    ${projet.images.length > 0 ? `
+                        <div class="gallery-container" id="gallery-container">
+                        <img class="gallery-image" id="gallery-image"
+                            src="${projet.images[0]}" alt="Image du projet">
+                        </div>
+                        <div class="gallery-controls gallery-controls--bar">
+                        <button class="gallery-btn" id="prev-btn">PRÉCÉDENT</button>
+                        <span class="gallery-counter" id="gallery-counter">1 / ${projet.images.length}</span>
+                        <button class="gallery-btn" id="next-btn">SUIVANT</button>
+                        </div>
+                    ` : `<p class="no-images-message">${no_images_message}</p>`}
+                    </div>
+
+                    <!-- Technologies -->
+                    <div class="card tech-card">
+                    <span class="section-title">Technologie(s) utilisé(s)</span>
+                    <div class="tech-grid">
+                        ${
+                        projet.technologies.map(t => `
+                            <div class="tech-item">
+                            <div class="tech-thumb">
+                                <img src="/projects/technologies/${t}.png" alt="${t}" title="${t}">
+                            </div>
+                            <!-- <span class="tech-name">${t}</span> -->
+                            </div>
+                        `).join("")
+                        }
+                    </div>
+                    </div>
+                </div>
                 `;
 
                 history.replaceState(null, null, `#${projet.id}`);

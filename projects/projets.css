@@ -1,19 +1,20 @@
-/****************
-** Sidebar
-****************/
+/**********************************************************************************************************************************************************************/
+/* Partie sidebar */
 
-
-/* Gros menu holder */
 /* gros conteneur */
 .projets-container {
     display: flex;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 70px); /* -140 si footer en +  (70 par header/footer)*/
+    overflow: auto;
 }
 
 /* mettre dedans */
 .sidebar {
     width: 20%;
-    background-color: #072b47;
+    height: calc(100vh-70px);
+    /* Ancien (1) Vs Nouveau (2) */
+    /* background-color: #1e1f1f; */
+    background: rgb(40, 39, 45);
     color: white;
     padding: 20px;
     overflow-y: auto;
@@ -29,21 +30,23 @@
     cursor: pointer;
     padding: 10px;
     border-bottom: 1px solid #ffffff33;
+    border-radius: 5px;
 }
 
 /* si au dessus */
 .project-item:hover {
-    background-color: #041624;
+    /* background-color: #041624; */
+    background: rgb(75, 74, 79);
 }
 
 /* si actif */
 .project-item.active-project {
-    background-color: #123860;
+    /* background-color: #123860; */
+    background: rgb(58, 63, 74);
     font-weight: bold;
     outline: 1;
-    outline-color: #ffffff;
-    outline-style: solid;
-    outline-width: 1px;
+
+    border-left: 3px solid #e7e7e7;
     border-radius: 3px;
 }
 
@@ -53,148 +56,23 @@
     color: #a0d8ff;
 }
 
-
-/* informations du projet   */
-/* quand on clique à gauche */
-.project-details {
-    flex: 1;
-    padding: 30px;
-    overflow-y: auto;
-    background: white;
-}
-
 /* enleve le margin top du h2, pour   */
 /* faire - d'espace au dessus du bloc */
 .project-details h2 {
     margin-top: 0;
 }
 
-/* sert à mettre le nom et date même ligne, et date à droite ducoup */
-.project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 /* style pour la date */
 .project-date {
     font-size: 0.8em;
     color: #bbb;
+    text-align: right;
 }
 
 
-/* Partie image */
-
-/* conteneur (bloc blanc) */
-.gallery-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 30px;
-    text-align: center;
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-/* gestionnaire d'images */
-.gallery-image {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain;
-    border-radius: 5px;
-    box-shadow: 0 0 15px #aaa;
-}
-
-/* affiche les boutons + le compteur */
-.gallery-controls {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* style pour les boutons */
-.gallery-btn {
-    background-color: #072b47;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 18px;
-}
-
-/* changement lorsque souris dessus */
-.gallery-btn:hover {
-    background-color: #041624;
-}
-
-/* style pour le texte du compteur */
-.gallery-counter {
-    font-size: 16px;
-    color: #333;
-    margin: 0 15px;
-}
-
-/* style du texte en cas d'absence d'images */
-.no-images-message {
-    color: #888;
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* gestion si le boug est sur tel */
-@media (max-width: 768px) {
-    .projets-container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        width: 100%;
-        box-sizing: border-box;
-        white-space: nowrap;
-    }
-
-    .project-item {
-        flex: 0 0 auto;
-        margin-right: 10px;
-        border-bottom: none;
-        border-right: 1px solid #ffffff33;
-    }
-
-    .project-details {
-        margin-top: 15px;
-        overflow-x: hidden;
-        max-width: 100%;
-    }
-
-    .project-details img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .project-date {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-size: 0.75rem;
-        color: #bbb;
-    }
-}
-
+/**********************************************************************************************************************************************************************/
 /* Ajout des styles pour les boutons */
-/* cliquables dans le texte des      */ 
+/* cliquables dans le texte des      */
 /* détails du projet                 */
 
 .json_a {
@@ -207,4 +85,206 @@
 
 .json_a:hover {
     background-color: #3498db;
+}
+
+/**********************************************************************************************************************************************************************/
+/* Partie section / grid / project-details
+
+
+/* Gros bloc derriere */
+.project-details {
+    background: transparent;
+    /* background:red; */
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Utilisation de la grille et les */
+/* différents colonnes expliquées  */
+.details-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "name  desc"
+        "date  desc"
+        "team  desc"
+        "tech   gal";
+    gap: 14px;
+}
+
+/* cartes */
+.card {
+    background: #1f2636;
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #fff;
+}
+
+/* titre pour description */
+/* de chaque élément      */
+.section-title {
+    display: block;
+    font-size: 12px;
+    letter-spacing: .02em;
+    color: #a7b0bf;
+    margin-bottom: 6px;
+}
+
+/* Mettre chaque classe en zone        */
+/* grid area pour mettre l'emplacement */
+.name-card { grid-area: name; }
+
+.date-card { grid-area: date; }
+
+.team-card { grid-area: team; }
+
+.desc-card {
+    grid-area: desc;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-card { grid-area: gal; }
+
+.tech-card { grid-area: tech; }
+
+
+/* Style pour les 3 infos      */
+/* en haut à droite du détails */
+.info-card .info-value {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    background: #222b3d;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+/* Element: Description */
+.desc-card .desc-text {
+    flex: 1;
+    background: #222b3d;
+    padding: 12px 14px;
+    border-radius: 8px;
+    line-height: 1.55;
+}
+
+/* Element: Galerie */
+.gallery-card .gallery-container {
+    background: #222b3d;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.gallery-image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Barre de navig en bas          */ 
+/* (precedant, compteur, suivant) */
+.gallery-controls--bar {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.gallery-btn {
+    background: #0f2b55;
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.gallery-btn:hover {
+    background: #12386c;
+}
+
+.gallery-counter {
+    justify-self: center;
+    font-size: 14px;
+    color: #cbd4e1;
+}
+
+/* style du texte en cas d'absence d'images */
+.no-images-message {
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* élément: grille de technos */
+/* 3 technos par ligne        */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-height: calc(3 * 100px + 2 * 12px);
+    height: calc(2 * 100px + 2 * 12px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* scrollbar amélioré pour les technos  */
+/* le vieux truc blanc gris c'est moche */
+.tech-grid::-webkit-scrollbar {
+    background: #222b3d;
+    border-radius: 8px;
+    width: 5px;
+}
+
+.tech-grid::-webkit-scrollbar-thumb {
+    background: #3a4152;
+    border-radius: 8px;
+}
+
+.tech-grid::-webkit-scrollbar-thumb:hover {
+    background: #4e5a6e;
+}
+
+/* Style pour chaque case */
+/* de techno, avec image  */
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.tech-thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: rgb(34, 43, 61);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .06);
+}
+
+.tech-thumb img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.tech-thumb:hover {
+    background: rgb(40, 49, 67);
+}
+
+.tech-name {
+    font-size: 12px;
+    color: #a7b0bf;
 }

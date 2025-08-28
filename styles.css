@@ -3,22 +3,25 @@ body {
     margin: 0;
     padding: 0;
     background: #f5f5f5;
+    /* Ancien (1) Vs Nouveau (2) */
+    /* background: linear-gradient(0deg, rgb(24, 23, 29), rgb(30, 29, 35)); */
+    background: rgb(24, 23, 29);
     color: #333;
+    overflow: hidden;
 }
 
 /*************************/
 /* Header
 /*************************/
 
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #041624, #072b47);
+    background: linear-gradient(135deg, rgb(12, 12, 36), rgb(23, 37, 71));
     color: white;
-    border-bottom: 1px solid #000;
+    border-bottom: 3px solid #000;
 }
 
 /* partie gauche avec le nom */
@@ -73,61 +76,11 @@ nav {
     font-weight: bold;
 }
 
-/* gestion si le boug est sur tel mdr */
-@media (max-width: 768px) {
-
-    /* gestion pour le header */
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 40px;
-    }
-
-    /* pour le titre */
-    .header-left h1 {
-        font-size: 1.6rem;
-        margin-bottom: 10px;
-    }
-
-    /* pour la partie droite */
-    .header-right {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    /* pour le sous titre */
-    .header-subtitle {
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    /* pour le nav */
-    nav {
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    /* pour les boutons du nav */
-    .nav_pages {
-        flex: 1 1 auto;
-        text-align: center;
-    }
-
-    .about {
-        max-width: 90%;
-        margin: 5%;
-    }
-}
-
 /* sec */
 section {
-    padding: 40px;
-    max-width: 800px;
+    /* padding-top: 40px; */
+
+    max-width: 1fr;
     margin: auto;
 }
 

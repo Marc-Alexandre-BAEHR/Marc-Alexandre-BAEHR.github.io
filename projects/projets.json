@@ -32,7 +32,7 @@
             "date": "Juin 2025",
             "technologies": [
                 "C",
-                "Github"
+                "GitHub"
             ],
             "images": [
                 "pictures/42sh/linkedin_picture.png"
@@ -56,7 +56,7 @@
                 "JavaScript", 
                 "Node.js", 
                 "Express",
-                "Github"
+                "GitHub"
             ],
             "images": [
                 "pictures/EpyTodo/site_global.png",
@@ -81,7 +81,7 @@
             "technologies": [
                 "C",
                 "CSFML",
-                "Github"
+                "GitHub"
             ],
             "images": [
                 "pictures/MyWorld/myworld.zoom_in.png",
@@ -112,7 +112,7 @@
             "technologies": [
                 "C",
                 "CSFML",
-                "Github"
+                "GitHub"
             ],
             "images": [
                 "pictures/Tusmo/tusmo.round1.png",
@@ -133,7 +133,7 @@
             "technologies": [
                 "C",
                 "CSFML",
-                "Github"
+                "GitHub"
             ],
             "images": [
                 "pictures/MyHunter/mh.start_menu.png",
