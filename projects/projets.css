@@ -231,8 +231,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    max-height: calc(3 * 100px + 2 * 12px);
-    height: calc(2 * 100px + 2 * 12px);
+    max-height: calc(3 * 120px + 2 * 12px);
+    min-height: calc(2 * 120px + 2 * 12px);
     overflow-y: auto;
     overflow-x: hidden;
 }
