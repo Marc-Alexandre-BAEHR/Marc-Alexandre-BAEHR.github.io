@@ -3,9 +3,6 @@
         {
             "nom": "2048",
             "id": "2048",
-            "description": [
-                "Recréation du célèbe jeu 2048 en Python à l'aide de la libraire PyGame"
-            ],
             "equipe": "1",
             "date": "En ce moment",
             "technologies": [
@@ -13,7 +10,7 @@
                 "PyGame"
             ],
             "images": [
-                "pictures/2048/gameplay_dev.png"
+                "/projects/all/2048/gameplay_dev.png"
             ]
         },
 
@@ -22,12 +19,6 @@
         {
             "nom": "42sh",
             "id": "42sh",
-            "description": [
-                "Projet de fin de 1ère année à Epitech, réalisation d'un shell en C.",
-                "Basé sur le shell tcsh, notre équipe a implémenté la majorité des fonctionnalités, à savoir:",
-                "Les redirections (simples et doubles), les pipes, les commandes internes, les alias,",
-                "les variables d'environnement, la gestion des erreurs, etc.."
-            ],
             "equipe": "4",
             "date": "Juin 2025",
             "technologies": [
@@ -35,7 +26,7 @@
                 "GitHub"
             ],
             "images": [
-                "pictures/42sh/linkedin_picture.png"
+                "/projects/all/42sh/linkedin_picture.png"
             ]
         },
 
@@ -44,10 +35,6 @@
         {
             "nom": "EpyTodo",
             "id": "epytodo",
-            "description": [
-                "Projet Web de gestion de tâches, réalisé par une équipe de 3 personnes.",
-                "Le projet m'a permis d'en apprendre plus sur les technologies du web."
-            ],
             "equipe": "3",
             "date": "Mai 2025",
             "technologies": [
@@ -59,9 +46,9 @@
                 "GitHub"
             ],
             "images": [
-                "pictures/EpyTodo/site_global.png",
-                "pictures/EpyTodo/site_connexion.png",
-                "pictures/EpyTodo/site_todo.png"
+                "/projects/all/epytodo/site_global.png",
+                "/projects/all/epytodo/site_connexion.png",
+                "/projects/all/epytodo/site_todo.png"
             ]
         },
 
@@ -70,12 +57,6 @@
         {
             "nom": "My World",
             "id": "myworld",
-            "description": [
-                "Projet graphique utilisant la 2D isométrique pour creer notre propre terrain personalisable.",
-                "On a creer un système avec bouton permettant de monter, descendre ou encore remettre à zéro la hauteur du terrain.",
-                "Nous pouvons aussi changer la texture de chaque case à l'aide d'un menu déroulant figurant en bas de l'écran",
-                "On peut également sauvegardre notre terrain, redémarrer l'application, et charger notre terrain"
-            ],
             "equipe": "2",
             "date": "Mars 2025",
             "technologies": [
@@ -84,11 +65,11 @@
                 "GitHub"
             ],
             "images": [
-                "pictures/MyWorld/myworld.zoom_in.png",
-                "pictures/MyWorld/myworld.without_grid.png",
-                "pictures/MyWorld/myworld.texture_bar.png",
-                "pictures/MyWorld/myworld.informations.png",
-                "pictures/MyWorld/myworld.save_button.png"
+                "/projects/all/myworld/myworld.zoom_in.png",
+                "/projects/all/myworld/myworld.without_grid.png",
+                "/projects/all/myworld/myworld.texture_bar.png",
+                "/projects/all/myworld/myworld.informations.png",
+                "/projects/all/myworld/myworld.save_button.png"
             ]
         },
 
@@ -97,16 +78,6 @@
         {
             "nom": "Tusmo",
             "id": "tusmo",
-            "description": [
-                "Tusmo est un jeu de lettre inspiré du jeu télévisé <a class='json_a' href=https://fr.wikipedia.org/wiki/Motus_(jeu_t%C3%A9l%C3%A9vis%C3%A9)>Motus</a>",
-                "développé en C avec la librairie CSFML.",
-                "",
-                "Le jeu consiste à deviner un mot de 5 lettres en 6 essais ou moins.",
-                "A chaque essais, vous saurez quelles lettres sont bien placés (en rouge) et ceux présente dans le mot (en jaune)",
-                "",
-                "Dans cette reproduction, vous avez 2 minutes pour trouver le mot, et chaque partie dure 5 manches",
-                "mais vous pouvez définir vous même le nombre de manches souhaité par partie."
-            ],
             "equipe": "1",
             "date": "Janvier 2025",
             "technologies": [
@@ -115,8 +86,8 @@
                 "GitHub"
             ],
             "images": [
-                "pictures/Tusmo/tusmo.round1.png",
-                "pictures/Tusmo/tusmo.round2.png"
+                "/projects/all/tusmo/tusmo.round1.png",
+                "/projects/all/tusmo/tusmo.round2.png"
             ]
         },
 
@@ -125,9 +96,7 @@
         {
             "nom": "MyHunter",
             "id": "myhunter",
-            "description": [
-                "MyHunter est une reproduction du célèbe jeu <a class='json_a' href=https://fr.wikipedia.org/wiki/Duck_Hunt>Duck Hunt</a>, développé en C avec la librairie CSFML."
-            ],
+
             "equipe": "1",
             "date": "Janvier 2025",
             "technologies": [
@@ -136,10 +105,10 @@
                 "GitHub"
             ],
             "images": [
-                "pictures/MyHunter/mh.start_menu.png",
-                "pictures/MyHunter/mh.gameplay1.png",
-                "pictures/MyHunter/mh.gameplay2.png",
-                "pictures/MyHunter/mh.gameplay3.png"
+                "/projects/all/myhunter/mh.start_menu.png",
+                "/projects/all/myhunter/mh.gameplay1.png",
+                "/projects/all/myhunter/mh.gameplay2.png",
+                "/projects/all/myhunter/mh.gameplay3.png"
             ]
         },
 
@@ -148,12 +117,6 @@
         {
             "nom": "Laby Game",
             "id": "labygame",
-            "description": [
-                "LabyGame est un jeu de type labyrinthe développé en Python avec la bibliothèqye PyGame.",
-                "Le joueur doit mémoriser un chemin de labyrinthe généré aléatoire, puis naviguer à travers le labyrinthe sans voir où il se situe.",
-                "Le joueur perd des vies en se heurtant aux murs, mais il a la capacité d'utiliser des objets spéciaux pour l'aider dans le labyrinthe.",
-                "Les objets spéciaux peuvent être achetés via le système de pièces, récoltables dans le labyrinthe."
-            ],
             "equipe": "3",
             "date": "Mai 2024",
             "technologies": [
@@ -161,11 +124,11 @@
                 "PyGame"
             ],
             "images": [
-                "pictures/LabyGame/game_menu.png",
-                "pictures/LabyGame/game_options.png",
-                "pictures/LabyGame/game_shop.png",
-                "pictures/LabyGame/in_game.png",
-                "pictures/LabyGame/game_win.png"
+                "/projects/all/labygame/game_menu.png",
+                "/projects/all/labygame/game_options.png",
+                "/projects/all/labygame/game_shop.png",
+                "/projects/all/labygame/in_game.png",
+                "/projects/all/labygame/game_win.png"
             ]
         }
     ]

@@ -76,25 +76,35 @@ nav {
     font-weight: bold;
 }
 
-/* sec */
-section {
-    /* padding-top: 40px; */
-
-    max-width: 1fr;
-    margin: auto;
-}
-
 /* style pour le gros carré */
 /* blanc de l'accueil       */
 /* mdrrrr c'est le about    */
-.about {
-    background-color: #ffffff;
+
+.red-alert {
+    background-color: rgb(54, 30, 30);
+    color: white;
+
     margin-top: 20px;
     margin-bottom: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.06);
     border-radius: 5px;
 
-    outline: 1;
-    outline-color: #000000;
-    outline-style: solid;
-    outline-width: 1px;
+    padding: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+
+.about {
+    background-color: rgb(30, 38, 54);
+    color: white;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 3px solid rgba(255, 255, 255, .06);
+    border-radius: 5px;
+
+    padding: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }

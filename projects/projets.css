@@ -14,7 +14,7 @@
     height: calc(100vh-70px);
     /* Ancien (1) Vs Nouveau (2) */
     /* background-color: #1e1f1f; */
-    background: rgb(40, 39, 45);
+    background: rgb(4, 0, 23);
     color: white;
     padding: 20px;
     overflow-y: auto;
@@ -28,7 +28,7 @@
 /* CSS pour chaque projet */
 .project-item {
     cursor: pointer;
-    padding: 10px;
+    padding: 1rem;
     border-bottom: 1px solid #ffffff33;
     border-radius: 5px;
 }
@@ -37,6 +37,7 @@
 .project-item:hover {
     /* background-color: #041624; */
     background: rgb(75, 74, 79);
+    transition: background 0.3s ease;
 }
 
 /* si actif */
@@ -50,9 +51,14 @@
     border-radius: 3px;
 }
 
+.project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* tag du projet (techno) */
 .project-technos {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: #a0d8ff;
 }
 
@@ -64,7 +70,7 @@
 
 /* style pour la date */
 .project-date {
-    font-size: 0.8em;
+    font-size: 1em;
     color: #bbb;
     text-align: right;
 }
@@ -76,15 +82,16 @@
 /* détails du projet                 */
 
 .json_a {
-    background-color: #072b47;
-    color: white;
+    color:white;
     text-decoration: none;
+    border-top: 1px solid rgb(4, 0, 23);
+    border-bottom: 1px solid rgb(4, 0, 23);
     padding: 2px 4px;
     border-radius: 5px;
 }
 
 .json_a:hover {
-    background-color: #3498db;
+    background-color: rgb(14, 40, 70);
 }
 
 /**********************************************************************************************************************************************************************/
@@ -97,21 +104,29 @@
     /* background:red; */
     padding: 20px;
     overflow-y: auto;
+    flex: 1;
+}
+
+.project-details .no-selection {
+    color: white;
+    text-align: center;
 }
 
 /* Utilisation de la grille et les */
 /* différents colonnes expliquées  */
 .details-grid {
+    /* background: red; */
+    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-        "name  desc"
-        "date  desc"
-        "team  desc"
-        "tech   gal";
-    gap: 14px;
+        "name  desc desc"
+        "date  desc desc"
+        "team  desc desc"
+        "gal   gal tech";
+    gap: 0.7em;
 }
 
 /* cartes */
@@ -145,6 +160,8 @@
     grid-area: desc;
     display: flex;
     flex-direction: column;
+    flex : 1;
+    min-height: 0;
 }
 
 .gallery-card { grid-area: gal; }
@@ -170,6 +187,7 @@
     padding: 12px 14px;
     border-radius: 8px;
     line-height: 1.55;
+    overflow: auto;
 }
 
 /* Element: Galerie */
@@ -181,10 +199,13 @@
 }
 
 .gallery-image {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     max-height: 320px;
     object-fit: contain;
     border-radius: 6px;
+    outline: 1px solid rgb(0, 0, 0);
+    box-shadow: 1px 1px 10px black;;
 }
 
 /* Barre de navig en bas          */ 
@@ -239,18 +260,21 @@
 
 /* scrollbar amélioré pour les technos  */
 /* le vieux truc blanc gris c'est moche */
-.tech-grid::-webkit-scrollbar {
+.tech-grid::-webkit-scrollbar,
+.desc-text::-webkit-scrollbar {
     background: #222b3d;
     border-radius: 8px;
     width: 5px;
 }
 
-.tech-grid::-webkit-scrollbar-thumb {
+.tech-grid::-webkit-scrollbar-thumb,
+.desc-text::-webkit-scrollbar-thumb {
     background: #3a4152;
     border-radius: 8px;
 }
 
-.tech-grid::-webkit-scrollbar-thumb:hover {
+.tech-grid::-webkit-scrollbar-thumb:hover,
+.desc-text::-webkit-scrollbar-thumb:hover {
     background: #4e5a6e;
 }
 

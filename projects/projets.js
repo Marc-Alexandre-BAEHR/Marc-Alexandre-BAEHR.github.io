@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <!-- Description (prend la hauteur des 3 blocs de gauche) -->
                     <div class="card desc-card">
                     <span class="section-title">Description du projet</span>
-                    <div class="desc-text">${projet.description.join("<br>")}</div>
+                    <div class="desc-text" id="desc-text">Chargement...</div>
                     </div>
 
                     <!-- Galerie -->
@@ -104,6 +104,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 `;
+
+                // Charger la description depuis un fichier externe
+                const descEl = document.getElementById("desc-text");
+                fetch(`/projects/all/${projet.id}/description.txt`)
+                    .then(res => {
+                        if (!res.ok) throw new Error("Fichier introuvable");
+                        return res.text();
+                    })
+                    .then(txt => {
+                        // Respecter les sauts de lignes
+                        descEl.innerHTML = txt.replace(/\n/g, "<br>");
+                    })
+                    .catch(err => {
+                        descEl.textContent = "Pas de description disponible.";
+                    });
 
                 history.replaceState(null, null, `#${projet.id}`);
 
