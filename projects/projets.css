@@ -1,10 +1,38 @@
 /**********************************************************************************************************************************************************************/
 /* Partie sidebar */
 
+
+/* # Sidebar search */
+.sidebar-search {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+#search-input {
+    width: 100%;
+    background: rgb(30, 38, 54);
+    box-sizing: border-box;
+    color:white;
+    margin-bottom: 10px;
+    padding: 0.7rem;
+    padding-left: 1.2rem;
+    cursor: pointer;
+    border: 0px solid #187dc6;
+    border-radius: 25px;
+}
+
+#search-count {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 /* gros conteneur */
 .projets-container {
     display: flex;
-    height: calc(100vh - 70px); /* -140 si footer en +  (70 par header/footer)*/
+    height: calc(100vh - 70px);
+    /* -140 si footer en +  (70 par header/footer)*/
     overflow: auto;
 }
 
@@ -82,7 +110,7 @@
 /* détails du projet                 */
 
 .json_a {
-    color:white;
+    color: white;
     text-decoration: none;
     border-top: 1px solid rgb(4, 0, 23);
     border-bottom: 1px solid rgb(4, 0, 23);
@@ -150,23 +178,33 @@
 
 /* Mettre chaque classe en zone        */
 /* grid area pour mettre l'emplacement */
-.name-card { grid-area: name; }
+.name-card {
+    grid-area: name;
+}
 
-.date-card { grid-area: date; }
+.date-card {
+    grid-area: date;
+}
 
-.team-card { grid-area: team; }
+.team-card {
+    grid-area: team;
+}
 
 .desc-card {
     grid-area: desc;
     display: flex;
     flex-direction: column;
-    flex : 1;
+    flex: 1;
     min-height: 0;
 }
 
-.gallery-card { grid-area: gal; }
+.gallery-card {
+    grid-area: gal;
+}
 
-.tech-card { grid-area: tech; }
+.tech-card {
+    grid-area: tech;
+}
 
 
 /* Style pour les 3 infos      */
@@ -205,10 +243,11 @@
     object-fit: contain;
     border-radius: 6px;
     outline: 1px solid rgb(0, 0, 0);
-    box-shadow: 1px 1px 10px black;;
+    box-shadow: 1px 1px 10px black;
+    ;
 }
 
-/* Barre de navig en bas          */ 
+/* Barre de navig en bas          */
 /* (precedant, compteur, suivant) */
 .gallery-controls--bar {
     margin-top: 10px;

@@ -19,23 +19,95 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const sidebar = document.getElementById('sidebar');
 
-            data.projets.forEach((projet, index) => {
+
+            ///
+            //  Usage de la barre de recherche
+            ///
+
+            const searchInput = document.getElementById("search-input");
+            const searchCount = document.getElementById("search-count");
+            const allItems = []
+
+            data.projets.forEach((projet) => {
                 const item = document.createElement('div');
                 item.setAttribute("data-id", projet.id);
                 item.classList.add('project-item');
+
+                // render de chaque projet visilbe
                 item.innerHTML = `
-                <div class="project-header">
-                    <strong>${projet.nom}</strong>
-                    <span class="project-date">${projet.date}</span>
-                </div>
-                <span class="project-technos">${formatTechnologies(projet.technologies)}</span>
+                    <div class="project-header">
+                        <strong>${projet.nom}</strong>
+                        <span class="project-date">${projet.date}</span>
+                    </div>
+                    <span class="project-technos">${formatTechnologies(projet.technologies)}</span>
                 `;
                 item.addEventListener('click', () => {
                     afficherDetails(projet, item);
                 });
 
                 sidebar.appendChild(item);
+                allItems.push(item);
             });
+
+            // funk (tu ta ta) pour récup le nombre de projets
+            function updateCount() {
+                const visible = allItems.filter(item => item.style.display !== "none").length;
+                searchCount.textContent = `${visible}/${allItems.length} résultat${visible > 1 ? "s" : ""} (${(visible * 100 / allItems.length).toFixed(2)} %)`;
+            }
+
+            searchInput.addEventListener("input", () => {
+
+                // text récupéré de l'input
+                const query = searchInput.value.toLowerCase();
+
+                allItems.forEach(item => {
+                    const name = item.querySelector("strong").textContent.toLowerCase();
+                    const techs = item.querySelector(".project-technos").textContent.toLowerCase();
+                    if (name.includes(query) || techs.includes(query)) {
+                        item.style.display = "";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                updateCount();
+            });
+
+            // au lancement pour afficher le nombre total
+            updateCount();
+
+
+
+
+
+            /// 
+            //  Affiche de chaque titre (nom, date, technos) pour chaque projet dans la sidebar
+            //
+            //      /!\ Appliqué au système de recherche, ce code est donc commenté /!\
+            /// 
+
+            // data.projets.forEach((projet, index) => {
+            //     const item = document.createElement('div');
+            //     item.setAttribute("data-id", projet.id);
+            //     item.classList.add('project-item');
+            //     item.innerHTML = `
+            //     <div class="project-header">
+            //         <strong>${projet.nom}</strong>
+            //         <span class="project-date">${projet.date}</span>
+            //     </div>
+            //     <span class="project-technos">${formatTechnologies(projet.technologies)}</span>
+            //     `;
+            //     item.addEventListener('click', () => {
+            //         afficherDetails(projet, item);
+            //     });
+
+            //     sidebar.appendChild(item);
+            // });
+
+
+            ///
+            //  Afficher les détails du projet sélectionné (partie visible à droite)
+            ///
 
             function afficherDetails(projet, elementClique) {
                 const details = document.getElementById('project-details');
@@ -90,8 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="card tech-card">
                     <span class="section-title">Technologie(s) utilisé(s)</span>
                     <div class="tech-grid">
-                        ${
-                        projet.technologies.map(t => `
+                        ${projet.technologies.map(t => `
                             <div class="tech-item">
                             <div class="tech-thumb">
                                 <img src="/projects/technologies/${t}.png" alt="${t}" title="${t}">
@@ -99,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <!-- <span class="tech-name">${t}</span> -->
                             </div>
                         `).join("")
-                        }
+                    }
                     </div>
                     </div>
                 </div>
@@ -171,5 +242,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Le reste du temps
             window.addEventListener('hashchange', handleHash);
+
+
+            // Clic en dehors d'un projet de la liste gauche / sidebar
+            const sidebarEl = document.getElementById("sidebar");
+            const detailsEl = document.getElementById("project-details");
+
+            sidebarEl.addEventListener("click", (e) => {
+                const clickedProject = e.target.closest(".project-item");
+
+                if (!clickedProject) {
+                    detailsEl.innerHTML = `
+                        <div class="no-selection">
+                            Sélectionnez un projet pour voir les détails.
+                        </div>
+                    `;
+
+                    document.querySelectorAll(".project-item.active-project")
+                        .forEach(el => el.classList.remove("active-project"));
+
+                    // enleve le hash de l'rul
+                    history.replaceState(null, null, window.location.pathname);
+                }
+            });
         });
 });
