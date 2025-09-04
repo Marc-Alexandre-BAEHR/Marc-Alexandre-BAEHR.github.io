@@ -138,6 +138,7 @@
 .project-details .no-selection {
     color: white;
     text-align: center;
+    vertical-align: bottom;
 }
 
 /* Utilisation de la grille et les */
@@ -157,7 +158,7 @@
     gap: 0.7em;
 }
 
-/* cartes */
+/*  cartes  */
 .card {
     background: #1f2636;
     border: 1px solid rgba(255, 255, 255, .06);

@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="card info-card team-card">
                     <span class="section-title">Taille du groupe</span>
                     <div class="info-value">
-                        ${projet.equipe > 1 ? `${projet.equipe} personnes` : `1 personne`}
+                        ${projet.equipe > 1 ? `${projet.equipe} personnes` : `Solo`}
                     </div>
                     </div>
 
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ` : `<p class="no-images-message">${no_images_message}</p>`}
                     </div>
 
-                    <!-- Technologies -->
+                    <!--  Technologies  -->
                     <div class="card tech-card">
                     <span class="section-title">Technologie(s) utilisé(s)</span>
                     <div class="tech-grid">
